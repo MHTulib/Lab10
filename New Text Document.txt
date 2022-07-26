@@ -1,0 +1,66 @@
+package equ;
+
+public class QuadraticEquation {
+	private double a;
+	private double b;
+	private double c;
+	public QuadraticEquation(double a, double b, double c) {
+		super();
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+	public double getA() {
+		return a;
+	}
+	public void setA(double a) {
+		this.a = a;
+	}
+	public double getB() {
+		return b;
+	}
+	public void setB(double b) {
+		this.b = b;
+	}
+	public double getC() {
+		return c;
+	}
+	public void setC(double c) {
+		this.c = c;
+	}
+	@Override
+	public String toString() {
+		return a +"x*x"+"+"+ b+"x"+"+"+c;
+		
+		
+	}
+	
+	public double Evaluate(double e) {
+		
+		return a*(e*e)+b*e+c;
+	}
+public double root1() {
+	return (-b-(Math.sqrt(b*b-4*a*c))/2*a) ;
+}
+
+public double root2() {
+	return (-b+(Math.sqrt(b*b-4*a*c))/2*a) ;
+}
+}
+--------------------------------------------------------------
+package equ;
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		QuadraticEquation q1= new QuadraticEquation(2,-4,-6);
+		System.out.println(q1);
+		
+		System.out.println(q1.Evaluate(2));
+		System.out.println(q1.root1());
+		System.out.println(q1.root2());
+	}
+
+}
