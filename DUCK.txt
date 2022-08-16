@@ -1,0 +1,116 @@
+package task06;
+
+public class Duck {
+	private int currentLocation;
+	private SwimStategy SwimStrategy;
+	public int getCurrentLocation() {
+		return currentLocation;
+	}
+	public void setCurrentLocation(int currentLocation) {
+		this.currentLocation = currentLocation;
+	}
+	public SwimStategy getSwimStrategy() {
+		return SwimStrategy;
+	}
+	public void setSwimStrategy(SwimStategy swimStrategy) {
+		SwimStrategy = swimStrategy;
+	}
+	public Duck(int currentLocation, SwimStategy swimStrategy) {
+		super();
+		this.currentLocation = currentLocation;
+		SwimStrategy = swimStrategy;
+	}
+ public void swim (int currentLocation) {
+	 this.currentLocation=SwimStrategy.swim(currentLocation);
+	 
+ }
+ public void quack() {
+	 
+ }
+}
+--------------------------------------------------------
+package task06;
+
+public class FloatRandomly {
+	public int swim(int currentLocation) {
+		return currentLocation+13;
+	}
+}
+-----------------------------------------------
+package task06;
+
+public class MallardDuck extends Duck {
+	public MallardDuck(int currentLocation, SwimStategy swimStrategy) {
+		super(currentLocation, swimStrategy);
+		
+	}
+	public void MallardDuck(int currentLocation, SwimStategy SwimStrategy) {
+		currentLocation=super.getCurrentLocation();
+		SwimStrategy=super.getSwimStrategy();
+	}
+	public void quack() {
+		System.out.println("Quack quack");
+	}
+	@Override
+	public String toString() {
+		return "MallardDuck [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+}
+------------------------------------------------------------------
+package task06;
+
+public class RubberDuck extends Duck {
+public RubberDuck(int currentLocation, SwimStategy swimStrategy) {
+		super(currentLocation, swimStrategy);
+		
+	}
+public void MallardDuck (int currentLocation, SwimStategy SwimStrategy) {
+	currentLocation=super.getCurrentLocation();
+	
+	SwimStrategy=super.getSwimStrategy();
+}
+public void quack() {
+	System.out.println("Squeak squeak");
+}
+@Override
+public String toString() {
+	return "RubberDuck [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+			+ "]";
+}
+
+}
+----------------------------------------------------------------
+package task06;
+
+public class SwimForward10Units {
+	public int swim(int currentLocation) {
+		return currentLocation+10;
+	}
+
+}
+------------------------------------------
+package task06;
+
+public interface SwimStategy {
+	public int swim(int currentLocation);
+
+	
+}
+--------------------------------------------------------
+package task06;
+
+public class Main {
+
+	public static void main(String[] args) {
+		MallardDuck m=new MallardDuck(0,new swim);
+		RubberDuck r= new RubberDuck(5,new swim);
+		System.out.println("MallardDuck Location swim after two times = ");
+		m.SwimForward10Units()*2;
+		System.out.println("RubberDuck Location swim after two times = ");
+		r.FloatRandomly();
+
+	}
+
+}
+
